@@ -10,3 +10,5 @@ Thumbs.db
 
 # Files
 npm-debug.log
+
+package-lock.json

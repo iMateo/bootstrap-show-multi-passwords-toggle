@@ -1,19 +1,30 @@
 /*!
- * Bootstrap Show Password Toggle v1.4.1
- * Copyright 2020-2023 C.Oliff
+ * Bootstrap Show Password Toggle v1.0.0
+ * Copyright 2023 Ihor Chyshkala
  * Licensed under MIT (https://github.com/coliff/bootstrap-show-password-toggle/blob/main/LICENSE)
  */
+const showPasswordToggle = document.querySelectorAll("[type='password']");
+const togglePasswordButtons = document.querySelectorAll(".toggle-password");
 
-var ShowPasswordToggle = document.querySelector("[type='password']");
-ShowPasswordToggle.onclick = function () {
-  document.querySelector("[type='password']").classList.add("input-password");
-  document.getElementById("toggle-password").classList.remove("d-none");
+showPasswordToggle.forEach((item) => {
+  item.addEventListener("click", () => {
+    item.classList.add("input-password");
+    togglePasswordButtons.forEach((button) => {
+      // Use 'button' instead of 'item'
+      button.classList.remove("d-none");
+    });
+  });
+});
 
-  const passwordInput = document.querySelector("[type='password']");
-  const togglePasswordButton = document.getElementById("toggle-password");
+const passwordInputs = document.querySelectorAll("[type='password']");
+togglePasswordButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    togglePassword(passwordInputs, button);
+  });
+});
 
-  togglePasswordButton.addEventListener("click", togglePassword);
-  function togglePassword() {
+const togglePassword = (passwordInputs, togglePasswordButton) => {
+  passwordInputs.forEach((passwordInput) => {
     if (passwordInput.type === "password") {
       passwordInput.type = "text";
       togglePasswordButton.setAttribute("aria-label", "Hide password.");
@@ -25,5 +36,5 @@ ShowPasswordToggle.onclick = function () {
           "Warning: this will display your password on the screen."
       );
     }
-  }
+  });
 };

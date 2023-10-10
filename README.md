@@ -1,6 +1,6 @@
-[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/coliff/bootstrap-show-password-toggle/master/LICENSE)
-[![GitHub Super-Linter](https://github.com/coliff/bootstrap-show-password-toggle/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
-[![GitHub Stars](https://img.shields.io/github/stars/coliff/bootstrap-show-password-toggle.svg?label=github%20stars)](https://github.com/coliff/bootstrap-show-password-toggle)
+[![LICENSE](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/iMateo/bootstrap-show-multi-passwords-togglemaster/LICENSE)
+[![GitHub Super-Linter](https://github.com/iMateo/bootstrap-show-multi-passwords-toggleworkflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
+[![GitHub Stars](https://img.shields.io/github/stars/iMateo/bootstrap-show-multi-passwords-toggle.svg?label=github%20stars)](https://github.com/iMateo/bootstrap-show-multi-passwords-toggle)
 [![npm Version](https://img.shields.io/npm/v/bootstrap-show-password-toggle)](https://www.npmjs.com/package/bootstrap-show-password-toggle)
 [![npm Downloads](https://img.shields.io/npm/dt/bootstrap-show-password-toggle.svg)](https://www.npmjs.com/package/bootstrap-show-password-toggle)
 
@@ -20,8 +20,8 @@ A show password as text toggle for Bootstrap forms
 
 ## Quick Start
 
-- [Download the latest release](https://github.com/coliff/bootstrap-show-password-toggle/)
-- Clone the repo `git clone https://github.com/coliff/bootstrap-show-password-toggle.git`
+- [Download the latest release](https://github.com/iMateo/bootstrap-show-multi-passwords-toggle)
+- Clone the repo `git clone https://github.com/iMateo/bootstrap-show-multi-passwords-toggle.git`
 - Install with [npm](https://www.npmjs.com/package/bootstrap-show-password-toggle) `npm install bootstrap-show-password-toggle`
 - Install with [yarn](https://yarnpkg.com/package/bootstrap-show-password-toggle) `yarn add bootstrap-show-password-toggle`
 
@@ -32,12 +32,22 @@ A show password as text toggle for Bootstrap forms
 2. Wrap the password input in an `input-group` div as follows:
 
 ```html
-<div class="input-group">
-  <input type="password" class="form-control rounded" required>
-  <button id="toggle-password" type="button" class="d-none"
-    aria-label="Show password as plain text. Warning: this will display your password on the screen.">
-  </button>
-</div>
+<form id="auth">
+  <div class="input-group">
+    <input type="password" class="form-control rounded" required>
+    <button type="button" class="d-none toggle-password"
+      aria-label="Show password as plain text. Warning: this will display your password on the screen.">
+    </button>
+  </div>
+</form>
+<form id="register">
+  <div class="input-group">
+    <input type="password" class="form-control rounded" required>
+    <button type="button" class="d-none toggle-password"
+      aria-label="Show password as plain text. Warning: this will display your password on the screen.">
+    </button>
+  </div>
+</form>
 ```
 
 3. Load the `show-password-toggle.min.js` after the form
